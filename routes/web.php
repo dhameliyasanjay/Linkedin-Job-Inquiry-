@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\LocationApiController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', [JobController::class, 'index'])->name('home');
@@ -11,6 +12,9 @@ Route::get('/', [JobController::class, 'index'])->name('home');
 // Resource Routes for Positions and Jobs
 Route::resource('positions', PositionController::class);
 Route::resource('jobs', JobController::class);
+
+// Reports / Analytics
+Route::get('reports', [ReportController::class, 'index'])->name('reports.index');
 
 // Location API — Indian states and cities
 Route::get('api/indian-states', [LocationApiController::class, 'indianStates'])->name('api.indian-states');

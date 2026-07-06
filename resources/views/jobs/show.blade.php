@@ -74,6 +74,16 @@
             </div>
 
             <div class="flex flex-col gap-1">
+                <span class="text-xs font-semibold uppercase tracking-wider text-[#706f6c] dark:text-[#A1A09A]">Phone Number</span>
+                <span class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">{{ $job->phone_number ?? 'Not specified' }}</span>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <span class="text-xs font-semibold uppercase tracking-wider text-[#706f6c] dark:text-[#A1A09A]">Payment</span>
+                <span class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">{{ $job->payment ?? 'Not specified' }}</span>
+            </div>
+
+            <div class="flex flex-col gap-1">
                 <span class="text-xs font-semibold uppercase tracking-wider text-[#706f6c] dark:text-[#A1A09A]">Plan Duration</span>
                 <span class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">{{ $job->plan_duration ?? 'Not specified' }}</span>
             </div>

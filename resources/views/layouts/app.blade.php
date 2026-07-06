@@ -43,6 +43,12 @@
                         >
                             Positions
                         </a>
+                        <a 
+                            href="{{ route('reports.index') }}" 
+                            class="text-sm font-medium transition-colors hover:text-[#f53003] dark:hover:text-[#FF4433] {{ Request::is('reports*') ? 'text-[#f53003] dark:text-[#FF4433] font-semibold border-b-2 border-[#f53003] dark:border-[#FF4433] py-5 -mb-px' : 'text-[#706f6c] dark:text-[#A1A09A]' }}"
+                        >
+                            Reports
+                        </a>
                     </nav>
                 </div>
             </div>

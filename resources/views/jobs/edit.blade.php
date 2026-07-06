@@ -68,6 +68,23 @@
                 </div>
             </div>
 
+            {{-- Phone Number + Payment --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex flex-col gap-2">
+                    <label for="phone_number" class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">Phone Number</label>
+                    <input type="text" id="phone_number" name="phone_number" value="{{ old('phone_number', $job->phone_number) }}" placeholder="e.g. +91 9876543210"
+                        class="w-full px-3 py-2 rounded-md border @error('phone_number') border-red-500 @else border-[#e3e3e0] dark:border-[#3E3E3A] @enderror bg-white dark:bg-[#0a0a0a] text-[#1b1b18] dark:text-[#EDEDEC] focus:border-[#f53003] focus:outline-none transition-colors">
+                    @error('phone_number')<span class="text-xs font-medium text-[#f53003]">{{ $message }}</span>@enderror
+                </div>
+                
+                <div class="flex flex-col gap-2">
+                    <label for="payment" class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">Payment <span class="text-[#f53003]">*</span></label>
+                    <input type="text" id="payment" name="payment" value="{{ old('payment', $job->payment) }}" placeholder="e.g. 50000 INR"
+                        class="w-full px-3 py-2 rounded-md border @error('payment') border-red-500 @else border-[#e3e3e0] dark:border-[#3E3E3A] @enderror bg-white dark:bg-[#0a0a0a] text-[#1b1b18] dark:text-[#EDEDEC] focus:border-[#f53003] focus:outline-none transition-colors" required>
+                    @error('payment')<span class="text-xs font-medium text-[#f53003]">{{ $message }}</span>@enderror
+                </div>
+            </div>
+
             {{-- Plan Duration + Start Date + End Date (readonly, auto) --}}
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="flex flex-col gap-2">

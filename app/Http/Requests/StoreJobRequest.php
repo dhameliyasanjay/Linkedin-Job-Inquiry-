@@ -28,6 +28,8 @@ class StoreJobRequest extends FormRequest
             'state'         => 'required|string|max:255',
             'city'          => 'required|string|max:255',
             'experience'    => 'nullable|string|max:255',
+            'phone_number'  => 'nullable|string|max:20',
+            'payment'       => 'required|string|max:255',
             'start_date'    => 'required|date',
             'plan_duration' => ['required', 'string', 'in:' . implode(',', array_keys(Job::PLAN_DURATIONS))],
             // end_date is computed server-side; accept it if sent but don't require it
@@ -48,6 +50,7 @@ class StoreJobRequest extends FormRequest
             'position_id.exists'     => 'The selected position is invalid.',
             'state.required'         => 'Please select a state.',
             'city.required'          => 'Please select a city.',
+            'payment.required'       => 'The payment field is required.',
             'start_date.required'    => 'The start date is required.',
             'start_date.date'        => 'Please enter a valid start date.',
             'plan_duration.required' => 'Please select a plan duration.',

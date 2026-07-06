@@ -21,6 +21,8 @@ class Job extends Model
         'state',
         'city',
         'experience',
+        'phone_number',
+        'payment',
         'start_date',
         'end_date',
         'plan_duration',
