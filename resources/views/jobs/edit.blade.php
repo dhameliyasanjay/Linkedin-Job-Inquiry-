@@ -37,8 +37,8 @@
                 </div>
             </div>
 
-            {{-- State + City (cascading) --}}
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {{-- State + City + Experience --}}
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="flex flex-col gap-2">
                     <label for="state" class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">State <span class="text-[#f53003]">*</span></label>
                     <select id="state" name="state" required
@@ -59,10 +59,7 @@
                     </select>
                     @error('city')<span class="text-xs font-medium text-[#f53003]">{{ $message }}</span>@enderror
                 </div>
-            </div>
-
-            {{-- Experience --}}
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
                 <div class="flex flex-col gap-2">
                     <label for="experience" class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">Experience</label>
                     <input type="text" id="experience" name="experience" value="{{ old('experience', $job->experience) }}" placeholder="e.g. 2-4 Years"

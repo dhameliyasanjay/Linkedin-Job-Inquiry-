@@ -23,7 +23,7 @@
             {{-- Name search --}}
             <div class="flex flex-col gap-1 flex-1">
                 <label for="filter_name" class="text-xs font-semibold uppercase tracking-wider text-[#706f6c] dark:text-[#A1A09A]">Search by Name</label>
-                <input type="text" id="filter_name" placeholder="Job title…"
+                <input type="text" id="filter_name" placeholder="Search Name..."
                     class="px-3 py-2 rounded-md border border-[#e3e3e0] dark:border-[#3E3E3A] bg-white dark:bg-[#0a0a0a] text-sm text-[#1b1b18] dark:text-[#EDEDEC] focus:border-[#f53003] focus:outline-none transition-colors">
             </div>
 
@@ -60,11 +60,11 @@
                     <tr>
                         <th class="px-5 py-4">Name</th>
                         <th class="px-5 py-4">Position</th>
-                        <th class="px-5 py-4">City</th>
-                        <th class="px-5 py-4">Experience</th>
+
                         <th class="px-5 py-4">Start Date</th>
                         <th class="px-5 py-4">End Date</th>
                         <th class="px-5 py-4">Plan</th>
+                        <th class="px-5 py-4">Countday</th>
                         <th class="px-5 py-4">Status</th>
                         <th class="px-5 py-4 text-right">Actions</th>
                     </tr>
@@ -246,9 +246,10 @@
 
     // Event delegation for dynamically added delete buttons in the table
     tbody.addEventListener('click', function (e) {
-        if (e.target.classList.contains('delete-btn')) {
+        const btn = e.target.closest('.delete-btn');
+        if (btn) {
             e.preventDefault();
-            deleteFormToSubmit = e.target.closest('form.delete-job-form');
+            deleteFormToSubmit = btn.closest('form.delete-job-form');
             openModal();
         }
     });

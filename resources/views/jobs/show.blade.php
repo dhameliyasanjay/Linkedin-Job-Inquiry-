@@ -55,6 +55,13 @@
         {{-- Details Grid --}}
         <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="flex flex-col gap-1">
+                <span class="text-xs font-semibold uppercase tracking-wider text-[#706f6c] dark:text-[#A1A09A]">State</span>
+                <span class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">
+                    {{ $job->state ?: 'Not specified' }}
+                </span>
+            </div>
+
+            <div class="flex flex-col gap-1">
                 <span class="text-xs font-semibold uppercase tracking-wider text-[#706f6c] dark:text-[#A1A09A]">City / Location</span>
                 <span class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">
                     {{ $job->city ?: 'Not specified' }}
@@ -72,11 +79,6 @@
             </div>
 
             <div class="flex flex-col gap-1">
-                <span class="text-xs font-semibold uppercase tracking-wider text-[#706f6c] dark:text-[#A1A09A]">Status</span>
-                <span class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">{{ $job->current_status }}</span>
-            </div>
-
-            <div class="flex flex-col gap-1">
                 <span class="text-xs font-semibold uppercase tracking-wider text-[#706f6c] dark:text-[#A1A09A]">Start Date</span>
                 <span class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">{{ $job->start_date->format('F d, Y') }}</span>
             </div>
@@ -88,15 +90,7 @@
                 </span>
             </div>
 
-            <div class="flex flex-col gap-1 border-t border-gray-100 dark:border-gray-800 pt-4">
-                <span class="text-xs font-semibold uppercase tracking-wider text-[#706f6c] dark:text-[#A1A09A]">Posted Date</span>
-                <span class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">{{ $job->created_at->format('F d, Y h:i A') }}</span>
-            </div>
 
-            <div class="flex flex-col gap-1 border-t border-gray-100 dark:border-gray-800 pt-4">
-                <span class="text-xs font-semibold uppercase tracking-wider text-[#706f6c] dark:text-[#A1A09A]">Last Updated</span>
-                <span class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">{{ $job->updated_at->format('F d, Y h:i A') }}</span>
-            </div>
         </div>
     </div>
 </div>

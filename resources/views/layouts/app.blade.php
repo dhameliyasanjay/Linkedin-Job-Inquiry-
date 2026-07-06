@@ -54,7 +54,7 @@
                 
                 <!-- Flash Notification Banner -->
                 @if (session('success'))
-                    <div class="mb-6 p-4 rounded-md border border-[#19140035] dark:border-[#3E3E3A] bg-emerald-50 dark:bg-emerald-950/20 text-emerald-800 dark:text-emerald-300 flex items-center gap-3 shadow-2xs starting:opacity-0 transition-opacity duration-300">
+                    <div id="flash-success" class="p-4 rounded-md border border-[#19140035] dark:border-[#3E3E3A] bg-emerald-50 dark:bg-emerald-950/20 text-emerald-800 dark:text-emerald-300 flex items-center gap-3 shadow-lg transition-opacity duration-500" style="position: fixed; top: 1.5rem; right: 1.5rem; z-index: 99999; min-width: 300px;">
                         <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
@@ -63,7 +63,7 @@
                 @endif
 
                 @if (session('error'))
-                    <div class="mb-6 p-4 rounded-md border border-[#19140035] dark:border-[#3E3E3A] bg-[#fff2f2] dark:bg-[#1D0002] text-[#f53003] dark:text-[#FF4433] flex items-center gap-3 shadow-2xs starting:opacity-0 transition-opacity duration-300">
+                    <div id="flash-error" class="p-4 rounded-md border border-[#19140035] dark:border-[#3E3E3A] bg-[#fff2f2] dark:bg-[#1D0002] text-[#f53003] dark:text-[#FF4433] flex items-center gap-3 shadow-lg transition-opacity duration-500" style="position: fixed; top: 1.5rem; right: 1.5rem; z-index: 99999; min-width: 300px;">
                         <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
@@ -83,5 +83,23 @@
         </footer>
         
         @yield('scripts')
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const successMsg = document.getElementById('flash-success');
+                const errorMsg = document.getElementById('flash-error');
+                
+                function fadeOutAndRemove(el) {
+                    if (el) {
+                        setTimeout(() => {
+                            el.style.opacity = '0';
+                            setTimeout(() => el.remove(), 500);
+                        }, 3000);
+                    }
+                }
+                
+                fadeOutAndRemove(successMsg);
+                fadeOutAndRemove(errorMsg);
+            });
+        </script>
     </body>
 </html>

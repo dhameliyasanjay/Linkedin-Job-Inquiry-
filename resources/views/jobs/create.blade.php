@@ -18,8 +18,8 @@
             {{-- Job Title + Position --}}
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="flex flex-col gap-2">
-                    <label for="name" class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">Job Title <span class="text-[#f53003]">*</span></label>
-                    <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="e.g. Lead PHP Developer"
+                    <label for="name" class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">Name <span class="text-[#f53003]">*</span></label>
+                    <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="e.g. Enter Developer Name"
                         class="w-full px-3 py-2 rounded-md border @error('name') border-red-500 @else border-[#e3e3e0] dark:border-[#3E3E3A] @enderror bg-white dark:bg-[#0a0a0a] text-[#1b1b18] dark:text-[#EDEDEC] focus:border-[#f53003] focus:outline-none transition-colors" required>
                     @error('name')<span class="text-xs font-medium text-[#f53003]">{{ $message }}</span>@enderror
                 </div>
@@ -36,8 +36,8 @@
                 </div>
             </div>
 
-            {{-- State + City (cascading) --}}
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {{-- State + City + Experience --}}
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="flex flex-col gap-2">
                     <label for="state" class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">State <span class="text-[#f53003]">*</span></label>
                     <select id="state" name="state" required
@@ -58,10 +58,7 @@
                     </select>
                     @error('city')<span class="text-xs font-medium text-[#f53003]">{{ $message }}</span>@enderror
                 </div>
-            </div>
-
-            {{-- Experience --}}
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
                 <div class="flex flex-col gap-2">
                     <label for="experience" class="text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">Experience</label>
                     <input type="text" id="experience" name="experience" value="{{ old('experience') }}" placeholder="e.g. 2-4 Years"
