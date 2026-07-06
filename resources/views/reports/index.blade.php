@@ -25,12 +25,11 @@
     </div>
 
     <!-- Table Section -->
-    <div class="bg-white dark:bg-[#161615] rounded-lg border border-[#19140035] dark:border-[#3E3E3A] overflow-hidden shadow-[0px_1px_2px_0px_rgba(0,0,0,0.06)]">
-        <div class="overflow-x-auto relative">
+    <div class="bg-white dark:bg-[#161615] rounded-lg border border-[#19140035] dark:border-[#3E3E3A] overflow-hidden shadow-[0px_1px_2px_0px_rgba(0,0,0,0.06)] min-h-[400px]">
+        <div class="overflow-x-auto relative h-full">
             <!-- Loading Overlay -->
-            <div id="table-loader" class="absolute inset-0 bg-white/50 dark:bg-[#161615]/50 backdrop-blur-sm z-10 hidden flex-col items-center justify-center">
-                <div class="w-6 h-6 border-2 border-[#f53003] border-t-transparent rounded-full animate-spin"></div>
-                <span class="mt-2 text-sm font-medium text-[#f53003]">Updating data...</span>
+            <div id="table-loader" class="absolute inset-0 bg-white/50 dark:bg-[#161615]/50 backdrop-blur-sm z-10 hidden flex-col items-center justify-start pt-16">
+                <div class="w-6 h-6 border-2 border-[#1b1b18] dark:border-[#EDEDEC] border-t-transparent rounded-full animate-spin"></div>
             </div>
             <table class="w-full text-sm text-left whitespace-nowrap">
                 <thead class="bg-gray-50/50 dark:bg-gray-800/20 text-xs uppercase tracking-wider text-[#706f6c] dark:text-[#A1A09A] border-b border-[#19140035] dark:border-[#3E3E3A]">
